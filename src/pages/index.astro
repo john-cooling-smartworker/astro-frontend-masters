@@ -7,38 +7,44 @@ import newsletter from '../images/newsletter.jpg';
 ---
 
 <Layout>
+  <!-- Hero Section -->
   <section class="block hero">
-		<div class="cta">
-			<h1>All Sandwiches. All the time.</h1>
-			<p class="lede">
-				The world’s leading sandwich connoisseurs trust sndwch.
-			</p>
-			<a href="/shop" class="big-link"> Shop Sandwich Kits</a>
-		</div>
-		<img
-			src={heroImg}
-			alt="A sandwich on a plate. This sandwich is a taco."
-			class="hero-image"
-		/>
-	</section>
-  <section class="block products">
-    <ShopItems count={3} addToCart={false} />
-    <p class="shop-link"><a href="/shop">Shop All Sandwich Kits &rarr;</a></p>
+    <div class="cta">
+      <h1>All Sandwiches. All the time.</h1>
+      <p class="lede">
+        The world’s leading sandwich connoisseurs trust sndwch.
+      </p>
+      <a href="/shop" class="big-link">Shop Sandwich Kits</a>
+    </div>
+    <img
+      src={heroImg}
+      alt="A sandwich on a plate. This sandwich is a taco."
+      class="hero-image"
+      loading="lazy"
+      decoding="async"
+    />
   </section>
 
+  <!-- Products Section -->
+  <section class="block products">
+    <ShopItems count={3} addToCart={false} />
+    <p class="shop-link">
+      <a href="/shop">Shop All Sandwich Kits &rarr;</a>
+    </p>
+  </section>
+
+  <!-- Newsletter Section -->
   <section class="block newsletter">
-    <img src={newsletter} alt="newsletter"/>
+    <img src={newsletter} alt="newsletter" loading="lazy" decoding="async" />
     <div class="copy">
-      <h3>Prefer you sandwichs to go</h3>
-      <p>
-        Get the sndwch newsletter
-      </p>
-      <form method="post" class="newsletter-form" action="/newsletter" >
+      <h3>Prefer your sandwiches to go?</h3>
+      <p>Get the sndwch newsletter</p>
+      <form method="post" class="newsletter-form" action="/newsletter" autocomplete="on">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" required autocomplete="name" />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" required autocomplete="email" />
 
         <button type="submit" class="big-link">Subscribe</button>
       </form>
